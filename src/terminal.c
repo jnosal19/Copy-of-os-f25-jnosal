@@ -4,7 +4,7 @@ static unsigned short *vga_buffer = (unsigned short*)0xb8000;
 static int cursor_offset = 0; // Tracks position in video memory (0 to 80*25-1)
 
 // Deliverable 1: Write a function called putc that writes a single character to the terminal
-void putc(int data) {
+int putc(int data) {
     const unsigned char color = 0x07; // Light grey on black
     char c = (char)data;
     
@@ -36,6 +36,8 @@ void putc(int data) {
         // Move cursor to beginning of last line
         cursor_offset = 80 * 24;
     }
+    
+    return data;
 }
 
 void terminal_clear(void) {

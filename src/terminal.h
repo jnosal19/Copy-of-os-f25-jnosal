@@ -2,7 +2,7 @@
 #define TERMINAL_H
 
 // Deliverable 1: putc function
-void putc(int data);
+int putc(int data);
 
 // Helper function to clear the screen
 void terminal_clear(void);
